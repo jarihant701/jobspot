@@ -1,0 +1,59 @@
+// Override default variables before the import
+$primary: #4267b2;
+$dark: #111;
+$light: #fff;
+// Import Bootstrap and its default variables
+@import '~bootstrap/scss/bootstrap.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1em;
+}
+
+.dropdown {
+  margin: 0.6em 1em;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  background-color: $light;
+  border-radius: 5px;
+  color: $primary;
+  font-weight: bold;
+  padding: 0.5em 1em;
+  border: 1px solid $primary;
+  transition: all 0.3s ease-in-out;
+  &:hover,
+  &:focus {
+    border: 1px solid $light;
+    background-color: $primary;
+    color: $light;
+  }
+}
+
+.form {
+  margin: 5rem auto;
+  max-width: 500px;
+  padding: 1.5rem;
+  border: 2px solid $primary;
+  // box-shadow: 0 0 1em rgba($color: $black, $alpha: 0.3);
+  border-radius: 1em;
+
+  h1 {
+    text-align: center;
+    color: $primary;
+  }
+  .input-div {
+    margin: 1rem 0;
+  }
+  .input-submit {
+    width: 100%;
+    display: block;
+  }
+}
+
+.required {
+  color: $danger;
+}

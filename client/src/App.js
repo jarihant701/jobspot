@@ -1,10 +1,10 @@
 import React from 'react';
+import './App.scss';
 import { Switch, Route } from 'react-router-dom';
-import './assets/css/App.min.css';
-import Applicant from './Pages/LoginRegisterApplicant';
-import Recruiter from './Pages/LoginRegisterRecruiter';
+import ApplicantLogin from './Pages/Applicant/Login';
+import ApplicantRegister from './Pages/Applicant/Register';
 
-//Importing components
+// Custom component imports
 import Navbar from './Components/Navbar';
 
 const App = () => {
@@ -12,8 +12,8 @@ const App = () => {
     <>
       <Navbar />
       <Switch>
-        <Route path='/applicant' component={Applicant} />
-        <Route path='/recruiter' component={Recruiter} />
+        <Route path='/applicant/login' component={ApplicantLogin} />
+        <Route path='/applicant/register' component={ApplicantRegister} />
       </Switch>
     </>
   );

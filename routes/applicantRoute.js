@@ -3,7 +3,6 @@ const bCrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const auth = require('../middleware/auth');
 require('../db/connection');
-// const mongoose = require('mongoose');
 
 const Applicant = require('../model/Applicant');
 
