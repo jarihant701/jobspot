@@ -59,6 +59,7 @@ router.post('/login', async (req, res) => {
 
   // Generating JWT
   const token = jwt.sign({ _id: applicantExist._id }, process.env.JWTSECRET);
+  res.cookie('x-auth-token', token, { httpOnly: true });
   res.json({
     token,
     user: {
