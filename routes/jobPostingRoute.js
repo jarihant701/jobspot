@@ -20,7 +20,9 @@ router.post('/create', auth, async (req, res) => {
       noOfOpenings,
       applyBy,
     } = req.body;
-    const payScale = from + '-' + to;
+    let payScale;
+    if (from && to)
+      payScale = from.toLocaleString('en') + '-' + to.toLocaleString('en');
     const recruiter = await Recruiter.findById(postedBy);
     if (!recruiter)
       return res.status(404).json({ message: 'Wrong Recruiter ID' });

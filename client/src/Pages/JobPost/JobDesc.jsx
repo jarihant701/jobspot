@@ -53,7 +53,10 @@ const JobDesc = () => {
           <h3 className='job_postedBy'>{job?.name}</h3>
           <h5 className='job_details'>
             {' '}
-            <i className='fas fa-star'></i> {`${job?.experience} Years`}{' '}
+            <i className='fas fa-star'></i>{' '}
+            {job.experience
+              ? `${job?.experience} Years`
+              : 'No Experience Needed'}{' '}
             &nbsp;&nbsp;&nbsp;&nbsp;
             <i className='fas fa-rupee-sign'></i>{' '}
             {job?.payScale === undefined

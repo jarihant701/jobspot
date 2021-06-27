@@ -98,6 +98,9 @@ const CreatePost = () => {
       message = message + '\n\u2022 location can not be empty';
     if (!input.jobDesc)
       message = message + '\n\u2022 Job Description can not be empty';
+    if ((!input.from && input.to) || (input.from && !input.to)) {
+      message = message + '\n\u2022 Both from and to are required';
+    }
     if (input.from >= input.to) {
       message =
         message + '\n\u2022 From can not be smaller than or equal to to';
