@@ -2,6 +2,7 @@ require('dotenv').config();
 
 const express = require('express');
 var cookieParser = require('cookie-parser');
+const path = require('path');
 const app = express();
 
 app.use(cookieParser());
@@ -9,7 +10,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 const PORT = process.env.PORT || 5000;
-const DB_URI = process.env.DB;
 
 require('./db/connection');
 
@@ -32,5 +32,12 @@ app.get('/api/logout', (req, res) => {
     res.status(500).json({ message: 'Some error occured' });
   }
 });
+
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'));
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  });
+}
 
 app.listen(PORT, () => console.log(`Server started at PORT ${PORT}`));
