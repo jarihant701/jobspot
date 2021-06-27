@@ -63,7 +63,7 @@ const JobApplicants = () => {
                 <td>{detail.pgDegree}</td>
                 <td>
                   <Link to='#!' onClick={() => removeApplicant(detail._id, id)}>
-                    View Applicants
+                    Remove Application
                   </Link>
                 </td>
               </tr>
@@ -72,7 +72,7 @@ const JobApplicants = () => {
         </tbody>
       </Table>
       <p className='text-center fs-4 mt-3'>
-        {details.length < 1 ? 'You have not applied to any job' : null}
+        {details.length < 1 ? 'There are no applications for this job' : null}
       </p>
     </div>
   );

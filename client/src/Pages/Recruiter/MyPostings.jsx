@@ -73,7 +73,7 @@ const MyPostings = () => {
         </tbody>
       </Table>
       <p className='text-center fs-4 mt-3'>
-        {postings.length < 1 ? 'You have not applied to any job' : null}
+        {postings.length < 1 ? 'You have not posted any job' : null}
       </p>
     </div>
   );

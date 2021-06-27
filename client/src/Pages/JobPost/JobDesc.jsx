@@ -54,7 +54,7 @@ const JobDesc = () => {
           <h5 className='job_details'>
             {' '}
             <i className='fas fa-star'></i>{' '}
-            {job.experience
+            {job?.experience
               ? `${job?.experience} Years`
               : 'No Experience Needed'}{' '}
             &nbsp;&nbsp;&nbsp;&nbsp;
