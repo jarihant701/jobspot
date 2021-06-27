@@ -13,8 +13,6 @@ const PORT = process.env.PORT || 5000;
 
 require('./db/connection');
 
-app.get('/', (req, res) => res.send('Hello World'));
-
 const recruiterRoute = require('./routes/recruiterRoute');
 const applicantRoute = require('./routes/applicantRoute');
 const jobPostingRoute = require('./routes/jobPostingRoute');
