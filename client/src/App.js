@@ -1,5 +1,5 @@
 import React, { createContext, useReducer } from 'react';
-import './App.scss';
+import './assets/css/App.min.css';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import Navbar from './Components/Navbar';
 import Home from './Pages/Home';
