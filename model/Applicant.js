@@ -12,15 +12,16 @@ const applicantSchema = new mongoose.Schema({
     trim: true,
     required: true,
   },
+  ugInstitute: String,
+  ugDegree: String,
+  ugMarks: Number,
+  pgInstitute: String,
+  pgDegree: String,
+  pgMarks: Number,
   password: {
     type: String,
     required: true,
   },
-  appliedTo: [
-    {
-      type: String,
-    },
-  ],
 });
 
 const Applicant = mongoose.model('Applicant', applicantSchema);

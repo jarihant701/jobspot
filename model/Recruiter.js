@@ -11,11 +11,6 @@ const recruiterSchema = new mongoose.Schema({
     trim: true,
     required: true,
   },
-  address: {
-    type: String,
-    trim: true,
-    required: true,
-  },
   contact: {
     type: Number,
     trim: true,
@@ -30,6 +25,11 @@ const recruiterSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  industry: {
+    type: String,
+    required: true,
+  },
 });
 
 const Recruiter = mongoose.model('Recruiter', recruiterSchema);
+module.exports = Recruiter;

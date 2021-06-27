@@ -13,22 +13,21 @@ $light: #fff;
   font-size: 1em;
 }
 
-.dropdown {
-  margin: 0.6em 1em;
+body {
+  width: 100vw;
+  overflow-x: hidden;
+  background-color: transparent;
 }
 
 .navbar-dark .navbar-nav .nav-link {
-  background-color: $light;
   border-radius: 5px;
-  color: $primary;
+  color: $light;
   font-weight: bold;
-  padding: 0.5em 1em;
-  border: 1px solid $primary;
   transition: all 0.3s ease-in-out;
-  &:hover,
-  &:focus {
+  margin-left: 1em;
+  border: 1px solid $primary;
+  &:hover {
     border: 1px solid $light;
-    background-color: $primary;
     color: $light;
   }
 }
@@ -36,9 +35,9 @@ $light: #fff;
 .form {
   margin: 5rem auto;
   max-width: 500px;
+  width: 100%;
   padding: 1.5rem;
   border: 2px solid $primary;
-  // box-shadow: 0 0 1em rgba($color: $black, $alpha: 0.3);
   border-radius: 1em;
 
   h1 {
@@ -61,5 +60,303 @@ $light: #fff;
 @media (max-width: 500px) {
   .form {
     margin: 1em;
+  }
+}
+
+.hero {
+  &_section {
+    width: 100vw;
+    min-height: 500px;
+    background-image: linear-gradient(
+        to left,
+        rgba(255, 255, 255, 0.3),
+        rgba(255, 255, 255, 0.3)
+      ),
+      url('./assets/images/hero_image.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &_div {
+    background-color: rgba($color: $light, $alpha: 0.8);
+    padding: 3em 5em;
+  }
+
+  &_heading {
+    font-size: 3.5em;
+    color: $dark;
+    position: relative;
+    margin-bottom: 0.7em;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 150px;
+      height: 5px;
+      background-color: $primary;
+    }
+  }
+
+  &_button {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+  }
+
+  &_group {
+    margin: 0.5em 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .hero {
+    &_div {
+      padding: 1.2rem;
+    }
+
+    &_heading {
+      font-size: 2.2em;
+    }
+  }
+}
+
+.focus {
+  color: $primary;
+}
+
+.home {
+  &_div {
+    width: 80%;
+    background-color: $light;
+    margin: 1rem auto;
+    padding-bottom: 0.5em;
+  }
+  &_heading {
+    font-size: 1.5em;
+    font-weight: 300;
+    text-transform: uppercase;
+    padding: 0.6em 1em;
+    margin: 0;
+    border-bottom: 1px solid $dark;
+  }
+}
+
+.jobcard {
+  box-shadow: 0 4px 4px rgba($color: $dark, $alpha: 0.2);
+  margin-bottom: 8px;
+  padding-left: 1em;
+  padding-right: 1em;
+  margin: 1em;
+  // width: 18rem;
+}
+.card-text {
+  margin-bottom: 0.3rem;
+}
+
+.fs-9 {
+  font-size: 0.9em;
+  color: rgb(83, 103, 119);
+}
+
+.job-title-link {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.location-div {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.location {
+  text-decoration: none;
+  color: black;
+  margin: 1em auto;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1em 0.2em;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    color: $primary;
+    font-weight: bold;
+  }
+  img {
+    margin-bottom: 0.5em;
+  }
+}
+
+@media (max-width: 500px) {
+  .home {
+    &_div {
+      width: 90%;
+    }
+  }
+}
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  background-color: $light;
+  padding: 1rem 4rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid $dark;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 1.1em;
+  margin-top: auto;
+}
+
+.search_jobs {
+  padding: 1rem 3rem;
+  // border-bottom: 1px solid rgb(20, 5, 5);
+  box-shadow: 0 4px 4px rgba($color: #000000, $alpha: 0.2);
+}
+
+.empty_state {
+  text-align: center;
+  margin: 2rem 1rem;
+  font-size: 1.5em;
+  padding: 10rem 0;
+}
+
+.job_listing {
+  padding: 1.5rem;
+}
+
+.pagination {
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+}
+
+.job {
+  width: 80%;
+  margin: 2rem auto;
+  // border: 1px solid red;
+  padding: 1.8rem 3.6rem;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+
+  &_title {
+    font-size: 2.5em;
+    text-transform: uppercase;
+    color: $primary;
+    font-weight: 500;
+  }
+
+  &_postedBy {
+    font-size: 1.1em;
+    color: #666;
+    font-weight: 300;
+  }
+
+  &_details {
+    font-size: 0.925em;
+    color: #666;
+    font-weight: 400;
+  }
+
+  article div {
+    margin: 1.5rem 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .job {
+    width: 90%;
+    padding: 1.2rem 2.4rem;
+    &_title {
+      font-size: 1.75em;
+    }
+  }
+}
+
+.jumbotron {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.12);
+  margin: 1rem 3rem;
+  padding: 1.5rem 2.5rem;
+  border-left: 1rem solid $success;
+}
+
+.page404 {
+  padding: 10rem 0;
+
+  h1 {
+    font-size: 10em;
+  }
+
+  p {
+    text-align: center;
+  }
+}
+
+.create_job {
+  width: 80%;
+  margin: 1.5rem auto;
+  padding: 1.5rem;
+  box-shadow: 0 0 8px rgba($color: #000000, $alpha: 0.2);
+}
+
+.ql-editor {
+  min-height: 250px;
+}
+
+.ql-toolbar.ql-snow {
+  border: none !important;
+  border-bottom: 1px solid #ccc !important;
+}
+.ql-container.ql-snow {
+  border: none !important;
+}
+
+[type='date'] {
+  background: #fff
+    url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png)
+    97% 50% no-repeat;
+}
+[type='date']::-webkit-inner-spin-button {
+  display: none;
+}
+[type='date']::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+
+/* custom styles */
+input[type='date'] {
+  padding: 3px 5px;
+  width: 100%;
+  border: 1px solid #ccc;
+}
+
+input[type='textarea'] {
+  white-space: pre-line;
+}
+
+.applicant-profile {
+  width: 80%;
+  margin: 3rem auto;
+  box-shadow: 0 0 8px rgba($color: #000000, $alpha: 0.12);
+  padding: 3rem;
+  border-radius: 10px;
+
+  h1 {
+    text-align: center;
+    color: $primary;
   }
 }

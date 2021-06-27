@@ -1,17 +1,13 @@
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
 const jobPostSchema = new mongoose.Schema({
   postedBy: {
-    type: String,
+    type: Schema.Types.ObjectId,
     required: true,
   },
   jobTitle: {
     type: String,
-    required: true,
-  },
-  position: {
-    type: String,
-    trim: true,
     required: true,
   },
   description: {
@@ -19,18 +15,13 @@ const jobPostSchema = new mongoose.Schema({
     trim: true,
     required: true,
   },
-  type: {
+  experience: {
     type: String,
+  },
+  location: {
+    type: String,
+    required: true,
     trim: true,
-    required: true,
-  },
-  duration: {
-    type: Number,
-    default: 0,
-    required: true,
-  },
-  payScale: {
-    type: Number,
   },
   skills: [
     {
@@ -39,7 +30,6 @@ const jobPostSchema = new mongoose.Schema({
   ],
   payScale: {
     type: String,
-    required: true,
   },
   noOfOpenings: {
     type: Number,
@@ -49,15 +39,24 @@ const jobPostSchema = new mongoose.Schema({
     type: Date,
     default: Date.now(),
   },
+  ugEducation: {
+    type: 'String',
+    default: 'Any Graduate in Any Specialization',
+  },
+  pgEducation: {
+    type: 'String',
+    default: 'Any Postgraduate in Any Specialization',
+  },
   applyBy: {
     type: Date,
     required: true,
   },
   applications: [
     {
-      type: String,
+      type: Schema.Types.ObjectId,
     },
   ],
 });
 
-const Recruiter = mongoose.model('Recruiter', jobPostSchema);
+const JobPost = mongoose.model('JobPost', jobPostSchema);
+module.exports = JobPost;
