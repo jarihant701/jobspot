@@ -130,12 +130,16 @@ router.put('/apply', auth, async (req, res) => {
 
     const ifAlreadyApplied = jobPost.applications.includes(appliedBy);
     if (ifAlreadyApplied) {
-      return res.status(400).json({ message: 'Already Applied' });
+      return res
+        .status(400)
+        .json({ message: 'You have already applied for this job.' });
     }
 
     jobPost.applications.push(appliedBy);
     jobPost.save();
-    res.status(200).json({ message: 'Applied' });
+    res
+      .status(200)
+      .json({ message: 'Your job application has been submitted' });
   } catch (e) {
     res.status(400).json({ message: 'Error' });
     console.log(e);

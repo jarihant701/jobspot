@@ -34,7 +34,7 @@ const MyPostings = () => {
   };
   return (
     <div className='container py-5'>
-      <h1 className='text-primary text-center fs-1'>My Applications</h1>
+      <h1 className='text-primary text-center fs-1'>My Postings</h1>
       <Table responsive striped bordered className='me-5'>
         <thead>
           <tr>
